@@ -6,12 +6,12 @@ public class FileReaderHandler
 {
 
 	
-	 private String filePath;
+	private String filePath;
 
-    public FileReaderHandler(String filePath)
-    {
-        this.filePath = filePath;
-    }
+	public FileReaderHandler(String filePath)
+	{
+	    this.filePath = filePath;
+	}
 
     public String readFile()
     {        
@@ -42,6 +42,9 @@ public class FileReaderHandler
         }
     }
 	
-	
+	public String GetFilePath()
+	{
+		return filePath;
+	}
 	
 }
