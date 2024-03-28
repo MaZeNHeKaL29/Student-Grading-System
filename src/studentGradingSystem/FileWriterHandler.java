@@ -38,4 +38,9 @@ public class FileWriterHandler
         }
     }
     
+    public String GetFileName()
+    {
+    	return fileName;
+    }
+    
 }
