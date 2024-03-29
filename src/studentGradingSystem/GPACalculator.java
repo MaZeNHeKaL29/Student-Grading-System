@@ -5,7 +5,7 @@ public class GPACalculator
 	
 	public static double calculateGPA(int mark)
 	{
-		if (mark >= 97 && mark < 100) 
+		if (mark >= 97 && mark <= 100) 
 		{
 		    return 4.0;
 		} else if (mark >= 93 && mark < 97) 

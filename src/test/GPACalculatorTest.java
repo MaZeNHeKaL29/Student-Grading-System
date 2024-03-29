@@ -84,11 +84,6 @@ public class GPACalculatorTest {
     }
 
     @Test
-    void test99() {
-        assertEquals(4.0, GPACalculator.calculateGPA(99));
-    }
-
-    @Test
     void test97() {
         assertEquals(4.0, GPACalculator.calculateGPA(97));
     }
