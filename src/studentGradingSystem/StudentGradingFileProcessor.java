@@ -47,9 +47,11 @@ public class StudentGradingFileProcessor
 		studentGradingManager = new StudentGradingManager();
 	}
 	
-	public void changeFilePath(String filePath)
+	public String changeFilePath(String filePath)
 	{
 		fileReaderHandler = new FileReaderHandler(filePath);
+		
+		return fileReaderHandler.GetFilePath();
 	}
 	
 	public boolean readFile()
@@ -59,9 +61,21 @@ public class StudentGradingFileProcessor
 		return studentGradingManager.manageStudentGrading(fileContent);
 	}
 	
-	public void writeFile()
+	public String writeFile()
 	{
 		fileWriterHandler.writeFile(studentGradingManager.GetStudentGradingOutput());
+		
+		return studentGradingManager.GetStudentGradingOutput();
+	}
+	
+	public String GetFilePath()
+	{
+		return fileReaderHandler.GetFilePath();
+	}
+	
+	public String GetFileOutputName()
+	{
+		return fileWriterHandler.GetFileName();
 	}
 
 }
