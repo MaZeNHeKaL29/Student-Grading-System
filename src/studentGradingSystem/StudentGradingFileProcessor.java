@@ -78,4 +78,13 @@ public class StudentGradingFileProcessor
 		return fileWriterHandler.GetFileName();
 	}
 
+	@Override
+	public boolean equals(Object o)
+	{
+		StudentGradingFileProcessor studentGradingFileProcessor = (StudentGradingFileProcessor)o;
+		
+		return this.GetFilePath() == studentGradingFileProcessor.GetFilePath() && this.GetFileOutputName() == studentGradingFileProcessor.GetFileOutputName();
+		
+	}
+	
 }
