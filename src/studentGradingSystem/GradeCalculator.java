@@ -5,7 +5,7 @@ public class GradeCalculator
 	
 	public static String calculateGrade(int mark)
 	{
-		if (mark >= 97 && mark < 100)
+		if (mark >= 97 && mark <= 100)
 		{
 		    return "A+";
 		} else if (mark >= 93 && mark < 97)
