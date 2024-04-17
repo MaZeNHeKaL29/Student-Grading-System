@@ -32,7 +32,7 @@ public class SubjectTester {
     @Before
     public void setUp() {
         subject1 = new Subject("Mathematics", "MATH101");
-        subject2 = new Subject(" Software Testing", "CSE337s");
+        subject2 = new Subject("Software Testing", "CSE337s");
         subject3 = new Subject("Real-Time and Embedded Systems Design", "CSE411s");
         subject4 = new Subject("Fundamentals of Big-Data Analytics", "CSE476s");
         student1 = mock(Student.class);
