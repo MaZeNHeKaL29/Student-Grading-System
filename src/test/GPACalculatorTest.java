@@ -73,7 +73,7 @@ public class GPACalculatorTest {
     }
 
     @Test
-    void testLessThan60() {
+    void test0T060() {
         for(int i = 0; i < 60; i++)
             assertEquals(0.0, GPACalculator.calculateGPA(i));
     }
@@ -86,5 +86,15 @@ public class GPACalculatorTest {
     @Test
     void test97() {
         assertEquals(4.0, GPACalculator.calculateGPA(97));
+    }
+
+    @Test
+    void testLessThan0() {
+        assertEquals("Not valid", GPACalculator.calculateGPA(-1));
+    }
+
+    @Test
+    void testMoreThan100() {
+        assertEquals("Not valid", GPACalculator.calculateGPA(101));
     }
 }

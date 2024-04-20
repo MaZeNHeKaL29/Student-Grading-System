@@ -73,7 +73,7 @@ public class GradeCalculatorTest {
     }
 
     @Test
-    void testLessThan60() {
+    void test0To60() {
         for(int i = 0; i < 60; i++)
             assertEquals("F", GradeCalculator.calculateGrade(i));
     }
@@ -86,5 +86,15 @@ public class GradeCalculatorTest {
     @Test
     void test97() {
         assertEquals("A+", GradeCalculator.calculateGrade(97));
+    }
+
+    @Test
+    void testLessThan0() {
+        assertEquals("Not valid", GradeCalculator.calculateGrade(-1));
+    }
+
+    @Test
+    void testMoreThan100() {
+        assertEquals("Not valid", GradeCalculator.calculateGrade(101));
     }
 }
