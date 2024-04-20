@@ -3,7 +3,7 @@ package studentGradingSystem;
 public class GPACalculator
 {
 	
-	public static double calculateGPA(int mark)
+	public static double calculateGPA(int mark) throws Exception
 	{
 		if (mark >= 97 && mark <= 100) 
 		{
@@ -38,9 +38,11 @@ public class GPACalculator
 		} else if (mark >= 60 && mark < 64) 
 		{
 		    return 1.0;
-		} else 
+		} else if (mark >= 0 && mark < 60)
 		{
 		    return 0.0;
+		} else {
+			throw new Exception("Not valid grade");
 		}
 
 	}

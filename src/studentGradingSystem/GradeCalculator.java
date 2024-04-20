@@ -3,7 +3,7 @@ package studentGradingSystem;
 public class GradeCalculator
 {
 	
-	public static String calculateGrade(int mark)
+	public static String calculateGrade(int mark) throws Exception
 	{
 		if (mark >= 97 && mark <= 100)
 		{
@@ -38,9 +38,11 @@ public class GradeCalculator
 		} else if (mark >= 60 && mark < 64) 
 		{
 		    return "D";
-		} else 
+		} else if (mark >= 0 && mark < 60)
 		{
 		    return "F";
+		} else {
+			throw new Exception("Not valid grade");
 		}
 
 	}
