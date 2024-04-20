@@ -2,6 +2,7 @@ package test;
 
 import studentGradingSystem.GradeCalculator;
 
+import static org.junit.Assert.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
@@ -90,11 +91,15 @@ public class GradeCalculatorTest {
 
     @Test
     void testLessThan0() {
-        assertEquals("Not valid", GradeCalculator.calculateGrade(-1));
+        assertThrows(Exception.class, () -> {
+            GradeCalculator.calculateGrade(-1);
+        });
     }
 
     @Test
     void testMoreThan100() {
-        assertEquals("Not valid", GradeCalculator.calculateGrade(101));
+        assertThrows(Exception.class, () -> {
+            GradeCalculator.calculateGrade(101);
+        });
     }
 }

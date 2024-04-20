@@ -2,6 +2,7 @@ package test;
 
 import studentGradingSystem.GPACalculator;
 
+import static org.junit.Assert.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
@@ -90,11 +91,15 @@ public class GPACalculatorTest {
 
     @Test
     void testLessThan0() {
-        assertEquals("Not valid", GPACalculator.calculateGPA(-1));
+        assertThrows(Exception.class, () -> {
+            GPACalculator.calculateGPA(-1);
+        });
     }
 
     @Test
     void testMoreThan100() {
-        assertEquals("Not valid", GPACalculator.calculateGPA(101));
+        assertThrows(Exception.class, () -> {
+            GPACalculator.calculateGPA(101);
+        });
     }
 }
