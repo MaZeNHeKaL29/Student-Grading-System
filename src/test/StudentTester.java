@@ -38,7 +38,7 @@ public class StudentTester {
     	student3 = new Student("AbdAllah Mostafa", "1900779s", 8, 9, 15, 53);
     	student4 = new Student("Mostafa Mohamed", "1803093s", 9, 8, 13, 55);
     	student5 = null;
-    	student7 = new Student(" Ahmed Mahmoud", "1901143s", 10, 10, 20, 60);
+    	student7 = new Student("Ahmed Mahmoud", "1901143s", 10, 10, 20, 60);
     	student8 = new Student("Mohamed Mostafa", "1901650",10, 10, 18, 56);
     	student9 =  new Student("Mazen Ehab", "1901280s", 9, 9, 17, 55);
     }

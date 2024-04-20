@@ -1,14 +1,28 @@
 package studentGradingSystem;
 
+
 public class StudentGradingChecker 
 {
 	public static boolean checkFileContent(String fileContent)
 	{
 		String[] lines = fileContent.split("\n");
-		
+				
+		// check file length
+		if (lines.length == 1) 
+		{
+			if(lines[0] != "")  // file contain one file
+			{
+				System.out.println("The file content contains only one line.");
+			}
+			else	// file is empty 
+			{
+				System.out.println("The file is empty.");
+			}
+			return false;
+		}
+
 		//check first line
 		int i = 0;
-		
 		
 		//check subject name
 		String subjectName = "";
@@ -25,8 +39,9 @@ public class StudentGradingChecker
             	subjectName = subjectName + c;
             }
         }
+        
         if(!SubjectChecker.checkSubjectName(subjectName))
-        {
+        {    	
         	System.out.println("Error in Input File. Subject Name is Invalid");
         	return false;
         }
@@ -53,6 +68,8 @@ public class StudentGradingChecker
         	return false;
         }
         
+        
+   
         //check Subject Full Mark
         String SubjectFullMark = "";
         for (; i < lines[0].length(); i++)
@@ -68,6 +85,7 @@ public class StudentGradingChecker
             	System.out.println("Error in Input File. Subject Full Mark has invalid spaces");
             	return false;
             }
+            else if(c == 13 || c == 10) break;
             else if(!(c >= '0' && c <= '9'))
             {
             	System.out.println("Error in Input File. Subject Full Mark has invalid characters");
@@ -84,6 +102,8 @@ public class StudentGradingChecker
         	System.out.println("Error in Input File. Subject Full Mark is Invalid");
         	return false;
         }
+        
+        
         
         for(int j = 1; j < lines.length; j++)
         {
@@ -246,6 +266,7 @@ public class StudentGradingChecker
                 	System.out.println("Error in Input File. Student Final Exam Mark has invalid spaces");
                 	return false;
                 }
+                else if(c == 13 || c == 10) break;
                 else if(!(c >= '0' && c <= '9'))
                 {
                 	System.out.println("Error in Input File. Student Final Exam Mark has invalid characters");
@@ -261,15 +282,11 @@ public class StudentGradingChecker
             {
             	System.out.println("Error in Input File. Student Final Exam Mark is Invalid");
             	return false;
-            }
-            
+            }    
         }
 		
 		
 		return true;
 	}
-	
-	
-	
-	
+
 }
