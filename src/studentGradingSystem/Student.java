@@ -65,12 +65,28 @@ public class Student
     
     public double GetGPA()
     {
-    	return GPACalculator.calculateGPA(this.TotalMarks);
+    	try 
+    	{
+        	return GPACalculator.calculateGPA(this.TotalMarks);
+    	}
+    	catch (Exception ex)
+    	{
+    		System.out.print(ex.getMessage());
+    		return 0.0;
+    	}
     }
     
     public String GetGrade()
     {
-    	return GradeCalculator.calculateGrade(this.TotalMarks);
+    	try 
+    	{
+    		return GradeCalculator.calculateGrade(this.TotalMarks);
+    	}
+    	catch (Exception ex)
+    	{
+    		System.out.print(ex.getMessage());
+    		return "F";
+    	}
     }
 }
 

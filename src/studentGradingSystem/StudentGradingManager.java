@@ -7,7 +7,7 @@ public class StudentGradingManager
 	
 	private String StudentGradingOutput;
 	
-	StudentGradingManager()
+	public StudentGradingManager()
 	{
 		StudentGradingOutput = "";
 	}
@@ -109,6 +109,7 @@ public class StudentGradingManager
                 	System.out.println("Error in Input File. Student Activities Mark has invalid spaces");
                 	return false;
                 }
+                else if (c == 13) break;
                 else if(!(c >= '0' && c <= '9'))
                 {
                 	System.out.println("Error in Input File. Student Activities Mark has invalid characters");
@@ -138,6 +139,7 @@ public class StudentGradingManager
                 	System.out.println("Error in Input File. Student Oral/Practical Mark has invalid spaces");
                 	return false;
                 }
+                else if (c == 13) break;
                 else if(!(c >= '0' && c <= '9'))
                 {
                 	System.out.println("Error in Input File. Student Oral/Practical Mark has invalid characters");
@@ -166,6 +168,7 @@ public class StudentGradingManager
                 	System.out.println("Error in Input File. Student Midterm Exam Mark has invalid spaces");
                 	return false;
                 }
+                else if (c == 13) break;
                 else if(!(c >= '0' && c <= '9'))
                 {
                 	System.out.println("Error in Input File. Student Midterm Exam Mark has invalid characters");
@@ -194,6 +197,7 @@ public class StudentGradingManager
                 	System.out.println("Error in Input File. Student Final Exam Mark has invalid spaces");
                 	return false;
                 }
+                else if (c == 13) break;
                 else if(!(c >= '0' && c <= '9'))
                 {
                 	System.out.println("Error in Input File. Student Final Exam Mark has invalid characters");

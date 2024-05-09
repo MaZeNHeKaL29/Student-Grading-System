@@ -1,4 +1,6 @@
-package studentGradingSystem;
+package test;
+
+import studentGradingSystem.*;
 
 import org.junit.*;
 import org.mockito.*;

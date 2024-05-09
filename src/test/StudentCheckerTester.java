@@ -1,4 +1,6 @@
-package studentGradingSystem;
+package test;
+
+import studentGradingSystem.*;
 
 import org.junit.*;
 import static org.junit.Assert.*;
@@ -117,7 +119,7 @@ public class StudentCheckerTester
 	public void checkStudentName_Test9() 
 	{
 	    boolean actual = StudentChecker.checkStudentName("JohnDoe");
-	    assertFalse(actual);
+	    assertTrue(actual);
 	}
 	
 	

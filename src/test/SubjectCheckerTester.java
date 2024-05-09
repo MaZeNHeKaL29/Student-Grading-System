@@ -1,4 +1,6 @@
-package studentGradingSystem;
+package test;
+
+import studentGradingSystem.*;
 
 import static org.junit.Assert.*;
 import org.junit.*;
