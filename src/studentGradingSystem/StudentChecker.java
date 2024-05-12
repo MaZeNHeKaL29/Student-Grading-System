@@ -59,7 +59,7 @@ public class StudentChecker
         }
         
         // If the length is 8, check if the last character is alphabetic or number
-        if (studentNumber.length() == 8 && !Character.isLetterOrDigit(studentNumber.charAt(7))) 
+        if (!Character.isLetterOrDigit(studentNumber.charAt(7))) 
         {
         	System.out.println("Student Number does not end with an alphabet or a number");
             return false;

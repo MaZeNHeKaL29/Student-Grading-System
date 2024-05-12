@@ -213,6 +213,7 @@ public class StudentGradingChecker
                 }
             }
             int StudentOralPracticalMarkInt = Integer.parseInt(StudentOralPracticalMark);
+            
             if(!StudentChecker.checkStudentOralPracticalMark(StudentOralPracticalMarkInt))
             {
             	System.out.println("Error in Input File. Student Oral/Practical Mark is Invalid");
@@ -250,7 +251,7 @@ public class StudentGradingChecker
             	System.out.println("Error in Input File. Student Midterm Exam Mark is Invalid");
             	return false;
             }
-            
+         
           //check Student Final Exam Mark
             String StudentFinalExamMark = "";
             for (; i < lines[j].length(); i++)
