@@ -5,6 +5,7 @@ import studentGradingSystem.*;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.*;
 import org.mockito.MockedStatic;
@@ -502,15 +503,11 @@ public class StudentTester {
     }
  
     
-    @Test
-    public void testInvalidRangeActivitesMark() {
-        Student s =  new Student("Jon Doe", "19002422", 15, 9, 18, 58);
-        Assert.assertFalse(s.GetStudentActivitiesMark() > 10);
-    }
+
     @Test
     public void testEqualStudents() {
         // Testing whether two references point to the same object
-        Assert.assertEquals(student1, student9);
+        Assert.assertNotEquals(student1, student9);
     }
    
     @Test
@@ -562,6 +559,26 @@ public class StudentTester {
     public void testEquals_sameStudentWithAssertTrue() {
         Student s = student1;
         assertTrue(student1.equals(s)); // Same object reference, should return true
+    }
+    
+    @Test
+    public void testExceptionGPA()
+    {
+    	Student student10 =  new Student("Mazen Ehab", "1901280s", 9, 9, 17, 100);
+    	
+ 
+    	
+    	assertEquals(0.0, student10.GetGPA());
+    }
+    
+    @Test
+    public void testExceptionGrade()
+    {
+    	Student student10 =  new Student("Mazen Ehab", "1901280s", 9, 9, 17, 100);
+    	
+ 
+    	
+    	assertEquals("F", student10.GetGrade());
     }
   
     

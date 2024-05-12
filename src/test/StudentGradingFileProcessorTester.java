@@ -7,6 +7,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.mock;
 
@@ -181,6 +182,36 @@ public class StudentGradingFileProcessorTester
 		StudentGradingFileProcessor studentGradingFileProcessor2 = new StudentGradingFileProcessor("input.txt", "output.txt");
 		
 		assertEquals(studentGradingFileProcessor1, studentGradingFileProcessor2);
+	}
+	
+	@Test
+	public void StudentGradingFileProcessorTestObjectEqual5()
+	{
+		StudentGradingFileProcessor studentGradingFileProcessor1 = new StudentGradingFileProcessor("input1.txt");
+		
+		StudentGradingFileProcessor studentGradingFileProcessor2 = new StudentGradingFileProcessor("input.txt");
+		
+		assertNotEquals(studentGradingFileProcessor1, studentGradingFileProcessor2);
+	}
+	
+	@Test
+	public void StudentGradingFileProcessorTestObjectEqual6()
+	{
+		StudentGradingFileProcessor studentGradingFileProcessor1 = new StudentGradingFileProcessor("input.txt", "output1.txt");
+		
+		StudentGradingFileProcessor studentGradingFileProcessor2 = new StudentGradingFileProcessor("input.txt", "output.txt");
+		
+		assertNotEquals(studentGradingFileProcessor1, studentGradingFileProcessor2);
+	}
+	
+	@Test
+	public void StudentGradingFileProcessorTestObjectEqual7()
+	{
+		StudentGradingFileProcessor studentGradingFileProcessor1 = new StudentGradingFileProcessor("input1.txt", "output1.txt");
+		
+		StudentGradingFileProcessor studentGradingFileProcessor2 = new StudentGradingFileProcessor("input.txt", "output.txt");
+		
+		assertNotEquals(studentGradingFileProcessor1, studentGradingFileProcessor2);
 	}
 	
 	
@@ -1521,6 +1552,34 @@ public class StudentGradingFileProcessorTester
 	{
 		
 		studentGradingFileProcessor = new StudentGradingFileProcessor("", "output.txt");
+		
+		if(studentGradingFileProcessor.readFile())
+		{	
+			String expectedOutputContent = studentGradingFileProcessor.writeFile();
+			
+			String fileName = studentGradingFileProcessor.GetFileOutputName();
+			
+			String content = readFile(fileName);
+			
+			assertEquals(expectedOutputContent, content);
+		}
+	}
+	
+	@Test
+	public void StudentGradingFileProcessorChangeFilePath1()
+	{
+		studentGradingFileProcessor = new StudentGradingFileProcessor("", "output.txt");
+		
+		studentGradingFileProcessor.changeFilePath("test29.txt");
+		
+		assertEquals("test29.txt", studentGradingFileProcessor.GetFilePath());
+	}
+	
+	@Test
+	public void StudentGradingFileProcessorTestEquals1()
+	{
+		
+		studentGradingFileProcessor = new StudentGradingFileProcessor("ttes", "output.txt");
 		
 		if(studentGradingFileProcessor.readFile())
 		{	

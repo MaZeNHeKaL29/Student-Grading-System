@@ -122,6 +122,14 @@ public class StudentCheckerTester
 	    assertTrue(actual);
 	}
 	
+	@Test
+	public void checkStudentName_Test10() 
+	{
+	    boolean actual = StudentChecker.checkStudentName(null);
+	    assertFalse(actual);
+	}
+	
+	
 	
 	/******************************** Testing checkStudentNumber (requirement 5) *********************************
 	
@@ -217,6 +225,13 @@ public class StudentCheckerTester
 	@Test public void checkStudentNumber_Test12() 
 	{
 	 	boolean actual = StudentChecker.checkStudentNumber("123456A1"); 
+	 	assertFalse(actual); 
+	}
+	
+	
+	@Test public void checkStudentNumber_Test13() 
+	{
+	 	boolean actual = StudentChecker.checkStudentNumber(null); 
 	 	assertFalse(actual); 
 	}
 	
@@ -455,17 +470,19 @@ public class StudentCheckerTester
 		assertTrue(actual); 		
 	}
 	
+
+	
 	@Test
 	public void checkStudentFinalExamMark_Test6()
 	{
-		boolean actual = StudentChecker.checkStudentMidtermExamMark(-2);
+		boolean actual = StudentChecker.checkStudentFinalExamMark(-2);
 		assertFalse(actual); 		
 	}
 	
 	@Test
 	public void checkStudentFinalExamMark_Test7()
 	{
-		boolean actual = StudentChecker.checkStudentMidtermExamMark(70);
+		boolean actual = StudentChecker.checkStudentFinalExamMark(70);
 		assertFalse(actual); 		
 	}
 }

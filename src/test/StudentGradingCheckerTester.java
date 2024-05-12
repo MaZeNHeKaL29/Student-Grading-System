@@ -5,6 +5,7 @@ import studentGradingSystem.*;
 import org.junit.*;
 import org.mockito.*;
 import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /*
 	notes
@@ -534,4 +535,289 @@ public class StudentGradingCheckerTester
 		 boolean actual = StudentGradingChecker.checkFileContent(content);
 		 assertFalse(actual);    	 
 	}
+	
+	@Test
+	public void checkFileContent_Test28()
+	{
+		
+		String content = "Quantum Computing,CSE123,100\r\n"
+				+ "Ahmed Mahmoud,1901143a,0,10,15,55\r\n";
+		
+		boolean Actual = StudentGradingChecker.checkFileContent(content);
+		
+		boolean Expected = true;
+		
+		assertEquals(Expected,Actual);
+	}
+	
+	@Test
+	public void checkFileContent_Test29()
+	{
+		
+		String content = "Quantum Computing,CSE123,100\r\n"
+				+ "Ahmed Mahmoud,1901143a, ,10,0,5\r\n";
+		
+		boolean Actual = StudentGradingChecker.checkFileContent(content);
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+
+	}
+	
+	@Test
+	public void checkFileContent_Test30()
+	{
+		String content = "Quantum Computing,CSE123,100\r\n"
+				+ "Ahmed Mahmoud,1901143a,mm,10,0,5\r\n";
+		
+		boolean Actual = StudentGradingChecker.checkFileContent(content);
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+	}
+	
+	@Test
+	public void checkFileContent_Test31()
+	{
+		String content = "Quantum Computing,CSE123,100\r\n"
+				+ "Ahmed Mahmoud,1901143a,10, ,0,5\r\n";
+		
+		boolean Actual = StudentGradingChecker.checkFileContent(content);
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+	}
+	
+	@Test
+	public void checkFileContent_Test32()
+	{
+		String content = "Quantum Computing,CSE123,100\r\n"
+				+ "Ahmed Mahmoud,1901143a,10,mm,0,5\r\n";
+		
+		boolean Actual = StudentGradingChecker.checkFileContent(content);
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+	}
+	
+	@Test
+	public void checkFileContent_Test33()
+	{
+		String content = "Quantum Computing,CSE123,100\r\n"
+				+ "Ahmed Mahmoud,1901143a,10,10, ,5\r\n";
+		
+		boolean Actual = StudentGradingChecker.checkFileContent(content);
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+
+	}
+	
+	@Test
+	public void checkFileContent_Test34()
+	{
+		String content = "Quantum Computing,CSE123,100\r\n"
+				+ "Ahmed Mahmoud,1901143a,10,10,mm,5\r\n";
+		
+		boolean Actual = StudentGradingChecker.checkFileContent(content);
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+
+		
+	}
+	
+	@Test
+	public void checkFileContent_Test35()
+	{
+		String content = "Quantum Computing,CSE123,100\r\n"
+				+ "Ahmed Mahmoud,1901143a,10,10,15, \r\n";
+		
+		boolean Actual = StudentGradingChecker.checkFileContent(content);
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+
+	}
+	
+	@Test
+	public void checkFileContent_Test36()
+	{
+		String content = "Quantum Computing,CSE123,100\r\n"
+				+ "Ahmed Mahmoud,1901143a,10,10,10,mm\r\n";
+		
+		boolean Actual = StudentGradingChecker.checkFileContent(content);
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+
+	}
+	
+	@Test
+	public void checkFileContent_Test37()
+	{
+		String content = "Quantum Computing,CSE123,100\r\n"
+				+ "Ahmed Mahmoud,1901143a,10,10,10,10,6\r\n";
+		
+		boolean Actual = StudentGradingChecker.checkFileContent(content);
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+	}
+	
+	@Test
+	public void checkFileContent_Test38()
+	{
+		String content = "Quantum Computing,CSE123,100\r\n"
+				+ "Ahmed Mahmoud,1901143a\r\n";
+		
+		boolean Actual = StudentGradingChecker.checkFileContent(content);
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+	}
+	
+	@Test
+	public void checkFileContent_Test39()
+	{
+		String content = "Quantum Computing,CSE123,100\r\n"
+				+ "Ahmed Mahmoud,1901143a,10\r\n";
+		
+		boolean Actual = StudentGradingChecker.checkFileContent(content);
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+	}
+	
+	@Test
+	public void checkFileContent_Test40()
+	{
+		String content = "Quantum Computing,CSE123,100\r\n"
+				+ "Ahmed Mahmoud,1901143a,10,10\r\n";
+		
+		boolean Actual = StudentGradingChecker.checkFileContent(content);
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+
+	}
+	
+	@Test
+	public void checkFileContent_Test41()
+	{
+		String content = "Quantum Computing,CSE123,100\r\n"
+				+ "Ahmed Mahmoud,1901143a,10,10,10\r\n";
+		
+		boolean Actual = StudentGradingChecker.checkFileContent(content);
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+		
+		
+	}
+	
+	
+	@Test
+	public void checkFileContent_Test42()
+	{
+		String content = "Q123,CSE123,100\r\n"
+				+ "Ahmed Mahmoud,1901143a,10,10,10\r\n";
+		
+		boolean Actual = StudentGradingChecker.checkFileContent(content);
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+		
+		
+	}
+	
+	@Test
+	public void checkFileContent_Test43()
+	{
+		String content = "Quantum Computing,CS,100\r\n"
+				+ "Ahmed Mahmoud,1901143a,10,10,10\r\n";
+		
+		boolean Actual = StudentGradingChecker.checkFileContent(content);
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+		
+		
+	}
+	
+	@Test
+	public void checkFileContent_Test44()
+	{
+		String content = "Quantum Computing,CSE123,80\r\n"
+				+ "Ahmed Mahmoud,1901143a,10,10,10\r\n";
+		
+		boolean Actual = StudentGradingChecker.checkFileContent(content);
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+		
+		
+	}
+	
+	@Test
+	public void checkFileContent_Test45()
+	{
+		String content = "Quantum Computing,CSE123, \r\n"
+				+ "Ahmed Mahmoud,1901143a,10,10,10\r\n";
+		
+		boolean Actual = StudentGradingChecker.checkFileContent(content);
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+		
+		
+	}
+	
+	@Test
+	public void checkFileContent_Test46()
+	{
+		String content = "Quantum Computing,CSE123,100,10\r\n"
+				+ "Ahmed Mahmoud,1901143a,10,10,10\r\n";
+		
+		boolean Actual = StudentGradingChecker.checkFileContent(content);
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+		
+		
+	}
+	
+	@Test
+	public void checkFileContent_Test47()
+	{
+		String content = "Quantum Computing,CSE123,100mm\r\n"
+				+ "Ahmed Mahmoud,1901143a,10,10,10\r\n";
+		
+		boolean Actual = StudentGradingChecker.checkFileContent(content);
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+		
+		
+	}
+	
 }

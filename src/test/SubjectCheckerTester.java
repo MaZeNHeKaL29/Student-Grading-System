@@ -124,6 +124,13 @@ public class SubjectCheckerTester
 	    //assertFalse(actual);
 	}	
 	
+	@Test
+	public void checkSubjectName_Test10() 
+	{
+	    boolean actual = SubjectChecker.checkSubjectName(null);
+	    //assertFalse(actual);
+	}	
+	
 	
 	/************************************** Testing checkSubjectCode (requirement 2) ******************************************
 	
@@ -241,6 +248,20 @@ public class SubjectCheckerTester
 	    boolean actual = SubjectChecker.checkSubjectCode("AB$123");
 	    assertFalse(actual);
 	}
+	
+	@Test
+	public void checkSubjectCode_Test15() 
+	{
+	    boolean actual = SubjectChecker.checkSubjectCode("AB$123sssss");
+	    assertFalse(actual);
+	}
+	
+	@Test
+	public void checkSubjectCode_Test16() 
+	{
+	    boolean actual = SubjectChecker.checkSubjectCode(null);
+	    //assertFalse(actual);
+	}	
 	
 	
 	

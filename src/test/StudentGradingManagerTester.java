@@ -238,4 +238,177 @@ public class StudentGradingManagerTester {
 		
 		assertEquals(Expected,Actual);
 	}
+	
+	@Test
+	public void StudentGradingManagerTest16()
+	{
+		StudentGradingManager SGM = new StudentGradingManager();
+		
+		boolean Actual = SGM.manageStudentGrading("Math,PHM333,100\r\n"
+				+ "Andrew,1999999p, ,10,0,5\r\n");
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+	}
+	
+	@Test
+	public void StudentGradingManagerTest17()
+	{
+		StudentGradingManager SGM = new StudentGradingManager();
+		
+		boolean Actual = SGM.manageStudentGrading("Math,PHM333,100\r\n"
+				+ "Andrew,1999999p,mm,10,0,5\r\n");
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+	}
+	
+	@Test
+	public void StudentGradingManagerTest18()
+	{
+		StudentGradingManager SGM = new StudentGradingManager();
+		
+		boolean Actual = SGM.manageStudentGrading("Math,PHM333,100\r\n"
+				+ "Andrew,1999999p,10, ,0,5\r\n");
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+	}
+	
+	@Test
+	public void StudentGradingManagerTest19()
+	{
+		StudentGradingManager SGM = new StudentGradingManager();
+		
+		boolean Actual = SGM.manageStudentGrading("Math,PHM333,100\r\n"
+				+ "Andrew,1999999p,10,mm,0,5\r\n");
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+	}
+	
+	@Test
+	public void StudentGradingManagerTest20()
+	{
+		StudentGradingManager SGM = new StudentGradingManager();
+		
+		boolean Actual = SGM.manageStudentGrading("Math,PHM333,100\r\n"
+				+ "Andrew,1999999p,10,10, ,5\r\n");
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+	}
+	
+	@Test
+	public void StudentGradingManagerTest21()
+	{
+		StudentGradingManager SGM = new StudentGradingManager();
+		
+		boolean Actual = SGM.manageStudentGrading("Math,PHM333,100\r\n"
+				+ "Andrew,1999999p,10,10,mm,5\r\n");
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+	}
+	
+	@Test
+	public void StudentGradingManagerTest22()
+	{
+		StudentGradingManager SGM = new StudentGradingManager();
+		
+		boolean Actual = SGM.manageStudentGrading("Math,PHM333,100\r\n"
+				+ "Andrew,1999999p,10,10,0, \r\n");
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+	}
+	
+	@Test
+	public void StudentGradingManagerTest23()
+	{
+		StudentGradingManager SGM = new StudentGradingManager();
+		
+		boolean Actual = SGM.manageStudentGrading("Math,PHM333,100\r\n"
+				+ "Andrew,1999999p,10,10,0,mm\r\n");
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+	}
+	
+	@Test
+	public void StudentGradingManagerTest24()
+	{
+		StudentGradingManager SGM = new StudentGradingManager();
+		
+		boolean Actual = SGM.manageStudentGrading("Math,PHM333,100\r\n"
+				+ "Andrew,1999999p,10,10,0,10,6\r\n");
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+	}
+	
+	@Test
+	public void StudentGradingManagerTest25()
+	{
+		StudentGradingManager SGM = new StudentGradingManager();
+		
+		boolean Actual = SGM.manageStudentGrading("Math,PHM333,100\r\n"
+				+ "Andrew,1999999p\r\n");
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+	}
+	
+	@Test
+	public void StudentGradingManagerTest26()
+	{
+		StudentGradingManager SGM = new StudentGradingManager();
+		
+		boolean Actual = SGM.manageStudentGrading("Math,PHM333,100\r\n"
+				+ "Andrew,1999999p,10\r\n");
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+	}
+	
+	@Test
+	public void StudentGradingManagerTest27()
+	{
+		StudentGradingManager SGM = new StudentGradingManager();
+		
+		boolean Actual = SGM.manageStudentGrading("Math,PHM333,100\r\n"
+				+ "Andrew,1999999p,10,10\r\n");
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+	}
+	
+	@Test
+	public void StudentGradingManagerTest28()
+	{
+		StudentGradingManager SGM = new StudentGradingManager();
+		
+		boolean Actual = SGM.manageStudentGrading("Math,PHM333,100\r\n"
+				+ "Andrew,1999999p,10,10,0\r\n");
+		
+		boolean Expected = false;
+		
+		assertEquals(Expected,Actual);
+	}
+	
+
+	
+
 }

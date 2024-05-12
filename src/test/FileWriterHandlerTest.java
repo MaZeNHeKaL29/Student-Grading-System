@@ -2,7 +2,9 @@ package test;
 
 // Import necessary classes and packages
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.mock;
 
 import studentGradingSystem.*;
 
@@ -14,6 +16,7 @@ import java.io.IOException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 // Class to test the FileWriterHandler class
 public class FileWriterHandlerTest {
@@ -37,7 +40,7 @@ public class FileWriterHandlerTest {
 
     // Test method to ensure content is correctly written to the file
     @Test
-    public void testWriteFile() throws IOException {
+    public void testWriteFile() throws Exception {
         String content = "Test content"; // Content to be written to the file
         fileWriterHandler.writeFile(content); // Write content to the file
 
@@ -56,7 +59,7 @@ public class FileWriterHandlerTest {
 
     // Test method to verify that writing empty content results in an empty file
     @Test
-    public void testWriteEmptyContent() throws IOException {
+    public void testWriteEmptyContent() throws Exception {
         String content = ""; // Empty content to be written to the file
         fileWriterHandler.writeFile(content); // Write empty content to the file
 
@@ -80,4 +83,6 @@ public class FileWriterHandlerTest {
         FileWriterHandler handler = new FileWriterHandler("testFile.txt"); // Create FileWriterHandler with a file name
         assertEquals("File name should remain unchanged", "testFile.txt", handler.GetFileName());
     }
+    
+
 }

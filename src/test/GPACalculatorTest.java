@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 public class GPACalculatorTest {
+	
     @Test
     void test97To100() throws Exception {
         for(int i = 97; i <= 100; i++)
